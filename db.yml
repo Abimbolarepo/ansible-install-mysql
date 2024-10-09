@@ -1,9 +1,9 @@
 - name: setup Mysql with medium_db db and remote login
   become: yes
-  hosts: Dbservers
+  hosts: db
   tasks:
     - name: Installing Mysql  and dependencies
-      package:
+      apt:
          name: "{{item}}"
          state: present
          update_cache: yes
